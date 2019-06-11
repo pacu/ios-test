@@ -40,7 +40,7 @@ class FredditDataSource: NSObject, UITableViewDataSource {
             }
             
             self.items.append(contentsOf: listingItems)
-            
+            completion?(true)
         }
     }
     
@@ -53,7 +53,14 @@ class FredditDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        let item = items[indexPath.row]
+        
+        cell.textLabel?.text = item.title
+        cell.detailTextLabel?.text = item.author
+        return cell
     }
     
 }
