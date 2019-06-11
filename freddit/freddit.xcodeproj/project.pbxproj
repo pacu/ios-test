@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D2CFD4C22B047A8006F920E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD4B22B047A8006F920E /* AppDelegate.swift */; };
+		0D2CFD4E22B047A8006F920E /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD4D22B047A8006F920E /* MasterViewController.swift */; };
+		0D2CFD5022B047A8006F920E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD4F22B047A8006F920E /* DetailViewController.swift */; };
+		0D2CFD5322B047A8006F920E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CFD5122B047A8006F920E /* Main.storyboard */; };
+		0D2CFD5522B047AC006F920E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CFD5422B047AC006F920E /* Assets.xcassets */; };
+		0D2CFD5822B047AC006F920E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CFD5622B047AC006F920E /* LaunchScreen.storyboard */; };
+		0D2CFD6322B047AC006F920E /* fredditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD6222B047AC006F920E /* fredditTests.swift */; };
+		0D2CFD6E22B047AC006F920E /* fredditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD6D22B047AC006F920E /* fredditUITests.swift */; };
+		0D2CFD7D22B049E1006F920E /* RedditAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD7C22B049E1006F920E /* RedditAPIClient.swift */; };
+		0D2CFD7F22B051DC006F920E /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD7E22B051DC006F920E /* ListingModel.swift */; };
+		0D2CFD8122B05B1C006F920E /* MockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CFD8022B05B1C006F920E /* MockResponse.json */; };
+		0D2CFD8222B05F0C006F920E /* MockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CFD8022B05B1C006F920E /* MockResponse.json */; };
+		0D2CFD8522B062F2006F920E /* FredditDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD8422B062F2006F920E /* FredditDataSource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D2CFD5F22B047AC006F920E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D2CFD4022B047A8006F920E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D2CFD4722B047A8006F920E;
+			remoteInfo = freddit;
+		};
+		0D2CFD6A22B047AC006F920E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D2CFD4022B047A8006F920E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D2CFD4722B047A8006F920E;
+			remoteInfo = freddit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D2CFD4822B047A8006F920E /* freddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D2CFD4B22B047A8006F920E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0D2CFD4D22B047A8006F920E /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		0D2CFD4F22B047A8006F920E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0D2CFD5222B047A8006F920E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0D2CFD5422B047AC006F920E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D2CFD5722B047AC006F920E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0D2CFD5922B047AC006F920E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D2CFD5E22B047AC006F920E /* fredditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fredditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D2CFD6222B047AC006F920E /* fredditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fredditTests.swift; sourceTree = "<group>"; };
+		0D2CFD6422B047AC006F920E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D2CFD6922B047AC006F920E /* fredditUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fredditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D2CFD6D22B047AC006F920E /* fredditUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fredditUITests.swift; sourceTree = "<group>"; };
+		0D2CFD6F22B047AC006F920E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D2CFD7C22B049E1006F920E /* RedditAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditAPIClient.swift; sourceTree = "<group>"; };
+		0D2CFD7E22B051DC006F920E /* ListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
+		0D2CFD8022B05B1C006F920E /* MockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockResponse.json; sourceTree = "<group>"; };
+		0D2CFD8422B062F2006F920E /* FredditDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FredditDataSource.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D2CFD4522B047A8006F920E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D2CFD5B22B047AC006F920E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D2CFD6622B047AC006F920E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D2CFD3F22B047A8006F920E = {
+			isa = PBXGroup;
+			children = (
+				0D2CFD4A22B047A8006F920E /* freddit */,
+				0D2CFD6122B047AC006F920E /* fredditTests */,
+				0D2CFD6C22B047AC006F920E /* fredditUITests */,
+				0D2CFD4922B047A8006F920E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D2CFD4922B047A8006F920E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D2CFD4822B047A8006F920E /* freddit.app */,
+				0D2CFD5E22B047AC006F920E /* fredditTests.xctest */,
+				0D2CFD6922B047AC006F920E /* fredditUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D2CFD4A22B047A8006F920E /* freddit */ = {
+			isa = PBXGroup;
+			children = (
+				0D2CFD7B22B04852006F920E /* API */,
+				0D2CFD4B22B047A8006F920E /* AppDelegate.swift */,
+				0D2CFD4D22B047A8006F920E /* MasterViewController.swift */,
+				0D2CFD4F22B047A8006F920E /* DetailViewController.swift */,
+				0D2CFD5122B047A8006F920E /* Main.storyboard */,
+				0D2CFD5422B047AC006F920E /* Assets.xcassets */,
+				0D2CFD5622B047AC006F920E /* LaunchScreen.storyboard */,
+				0D2CFD5922B047AC006F920E /* Info.plist */,
+				0D2CFD8322B05FB5006F920E /* Resources */,
+				0D2CFD8422B062F2006F920E /* FredditDataSource.swift */,
+			);
+			path = freddit;
+			sourceTree = "<group>";
+		};
+		0D2CFD6122B047AC006F920E /* fredditTests */ = {
+			isa = PBXGroup;
+			children = (
+				0D2CFD6222B047AC006F920E /* fredditTests.swift */,
+				0D2CFD6422B047AC006F920E /* Info.plist */,
+			);
+			path = fredditTests;
+			sourceTree = "<group>";
+		};
+		0D2CFD6C22B047AC006F920E /* fredditUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0D2CFD6D22B047AC006F920E /* fredditUITests.swift */,
+				0D2CFD6F22B047AC006F920E /* Info.plist */,
+			);
+			path = fredditUITests;
+			sourceTree = "<group>";
+		};
+		0D2CFD7B22B04852006F920E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0D2CFD7C22B049E1006F920E /* RedditAPIClient.swift */,
+				0D2CFD7E22B051DC006F920E /* ListingModel.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0D2CFD8322B05FB5006F920E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0D2CFD8022B05B1C006F920E /* MockResponse.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D2CFD4722B047A8006F920E /* freddit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D2CFD7222B047AC006F920E /* Build configuration list for PBXNativeTarget "freddit" */;
+			buildPhases = (
+				0D2CFD4422B047A8006F920E /* Sources */,
+				0D2CFD4522B047A8006F920E /* Frameworks */,
+				0D2CFD4622B047A8006F920E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = freddit;
+			productName = freddit;
+			productReference = 0D2CFD4822B047A8006F920E /* freddit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D2CFD5D22B047AC006F920E /* fredditTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D2CFD7522B047AC006F920E /* Build configuration list for PBXNativeTarget "fredditTests" */;
+			buildPhases = (
+				0D2CFD5A22B047AC006F920E /* Sources */,
+				0D2CFD5B22B047AC006F920E /* Frameworks */,
+				0D2CFD5C22B047AC006F920E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D2CFD6022B047AC006F920E /* PBXTargetDependency */,
+			);
+			name = fredditTests;
+			productName = fredditTests;
+			productReference = 0D2CFD5E22B047AC006F920E /* fredditTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0D2CFD6822B047AC006F920E /* fredditUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D2CFD7822B047AC006F920E /* Build configuration list for PBXNativeTarget "fredditUITests" */;
+			buildPhases = (
+				0D2CFD6522B047AC006F920E /* Sources */,
+				0D2CFD6622B047AC006F920E /* Frameworks */,
+				0D2CFD6722B047AC006F920E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D2CFD6B22B047AC006F920E /* PBXTargetDependency */,
+			);
+			name = fredditUITests;
+			productName = fredditUITests;
+			productReference = 0D2CFD6922B047AC006F920E /* fredditUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D2CFD4022B047A8006F920E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Appscrafter;
+				TargetAttributes = {
+					0D2CFD4722B047A8006F920E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					0D2CFD5D22B047AC006F920E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 0D2CFD4722B047A8006F920E;
+					};
+					0D2CFD6822B047AC006F920E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 0D2CFD4722B047A8006F920E;
+					};
+				};
+			};
+			buildConfigurationList = 0D2CFD4322B047A8006F920E /* Build configuration list for PBXProject "freddit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0D2CFD3F22B047A8006F920E;
+			productRefGroup = 0D2CFD4922B047A8006F920E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D2CFD4722B047A8006F920E /* freddit */,
+				0D2CFD5D22B047AC006F920E /* fredditTests */,
+				0D2CFD6822B047AC006F920E /* fredditUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D2CFD4622B047A8006F920E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2CFD5822B047AC006F920E /* LaunchScreen.storyboard in Resources */,
+				0D2CFD5522B047AC006F920E /* Assets.xcassets in Resources */,
+				0D2CFD8122B05B1C006F920E /* MockResponse.json in Resources */,
+				0D2CFD5322B047A8006F920E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D2CFD5C22B047AC006F920E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2CFD8222B05F0C006F920E /* MockResponse.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D2CFD6722B047AC006F920E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D2CFD4422B047A8006F920E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2CFD5022B047A8006F920E /* DetailViewController.swift in Sources */,
+				0D2CFD8522B062F2006F920E /* FredditDataSource.swift in Sources */,
+				0D2CFD7D22B049E1006F920E /* RedditAPIClient.swift in Sources */,
+				0D2CFD7F22B051DC006F920E /* ListingModel.swift in Sources */,
+				0D2CFD4E22B047A8006F920E /* MasterViewController.swift in Sources */,
+				0D2CFD4C22B047A8006F920E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D2CFD5A22B047AC006F920E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2CFD6322B047AC006F920E /* fredditTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D2CFD6522B047AC006F920E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2CFD6E22B047AC006F920E /* fredditUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D2CFD6022B047AC006F920E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D2CFD4722B047A8006F920E /* freddit */;
+			targetProxy = 0D2CFD5F22B047AC006F920E /* PBXContainerItemProxy */;
+		};
+		0D2CFD6B22B047AC006F920E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D2CFD4722B047A8006F920E /* freddit */;
+			targetProxy = 0D2CFD6A22B047AC006F920E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0D2CFD5122B047A8006F920E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D2CFD5222B047A8006F920E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0D2CFD5622B047AC006F920E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D2CFD5722B047AC006F920E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D2CFD7022B047AC006F920E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0D2CFD7122B047AC006F920E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0D2CFD7322B047AC006F920E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6J82A38BF9;
+				INFOPLIST_FILE = freddit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appscrafter.freddit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0D2CFD7422B047AC006F920E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6J82A38BF9;
+				INFOPLIST_FILE = freddit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appscrafter.freddit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0D2CFD7622B047AC006F920E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6J82A38BF9;
+				INFOPLIST_FILE = fredditTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appscrafter.fredditTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/freddit.app/freddit";
+			};
+			name = Debug;
+		};
+		0D2CFD7722B047AC006F920E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6J82A38BF9;
+				INFOPLIST_FILE = fredditTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appscrafter.fredditTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/freddit.app/freddit";
+			};
+			name = Release;
+		};
+		0D2CFD7922B047AC006F920E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6J82A38BF9;
+				INFOPLIST_FILE = fredditUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appscrafter.fredditUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = freddit;
+			};
+			name = Debug;
+		};
+		0D2CFD7A22B047AC006F920E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6J82A38BF9;
+				INFOPLIST_FILE = fredditUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appscrafter.fredditUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = freddit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D2CFD4322B047A8006F920E /* Build configuration list for PBXProject "freddit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D2CFD7022B047AC006F920E /* Debug */,
+				0D2CFD7122B047AC006F920E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D2CFD7222B047AC006F920E /* Build configuration list for PBXNativeTarget "freddit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D2CFD7322B047AC006F920E /* Debug */,
+				0D2CFD7422B047AC006F920E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D2CFD7522B047AC006F920E /* Build configuration list for PBXNativeTarget "fredditTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D2CFD7622B047AC006F920E /* Debug */,
+				0D2CFD7722B047AC006F920E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D2CFD7822B047AC006F920E /* Build configuration list for PBXNativeTarget "fredditUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D2CFD7922B047AC006F920E /* Debug */,
+				0D2CFD7A22B047AC006F920E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D2CFD4022B047A8006F920E /* Project object */;
+}
