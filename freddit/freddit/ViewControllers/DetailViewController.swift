@@ -10,17 +10,42 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-  
-    func configureView() {
-        // Update the user interface for the detail item.
-//        if let detail = detailItem {
-//            if let label = detailDescriptionLabel {
-//                label.text = detail.description
-//            }
-//        }
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var thumbnail: UIImageView!
+    
+    var detailItem: ListingItem? {
+        didSet {
+            // Update the view.
+            configureView()
+        }
     }
-
+    
+    
+    func configureView() {
+        
+        if let detail = detailItem {
+            showAllSubViews()
+            authorLabel.text = detail.author ?? "unknown author"
+            titleLabel.text = detail.title ?? "unknown title"
+            thumbnail.setPlaceholderImage()
+        } else {
+            hideAllSubviews()
+            authorLabel.text = nil
+            titleLabel.text = nil
+        }
+    }
+    
+    
+    func showAllSubViews() {
+        self.view.subviews.forEach({$0.isHidden = false})
+    }
+    
+    func hideAllSubviews() {
+        self.view.subviews.forEach({$0.isHidden = true})
+    }
+    
+    // MARK: Life cycle
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -32,12 +57,7 @@ class DetailViewController: UIViewController {
         configureView()
     }
 
-    var detailItem: ListingItem? {
-        didSet {
-            // Update the view.
-            configureView()
-        }
-    }
+   
 
 
 }
