@@ -11,6 +11,7 @@ import UIKit
 
 class FredditDataSource: NSObject, UITableViewDataSource {
     
+    
     private let pageLimit: Int = 50
     
     private var client: APIClient
@@ -44,6 +45,13 @@ class FredditDataSource: NSObject, UITableViewDataSource {
         }
     }
     
+    func item(for indexPath: IndexPath) -> ListingItem? {
+        guard indexPath.row < items.count else { return nil }
+        return items[indexPath.row]
+    }
+    
+    // Mark: Table View Data Source conformance
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -52,15 +60,19 @@ class FredditDataSource: NSObject, UITableViewDataSource {
        return items.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, delegate: ListingItemDelegate) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ListingItemTableViewCell else {
+            print("❌ FATAL ERROR: LISTING CELL OFF WRONG TYPE AT: \(indexPath)")
+            return UITableViewCell()
+        }
         
-        let item = items[indexPath.row]
-        
-        cell.textLabel?.text = item.title
-        cell.detailTextLabel?.text = item.author
+        cell.configure(for: items[indexPath.row], unread: true, delegate: delegate)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        fatalError("❌ use tableView:cellForRowAt:delegate instead")
     }
     
 }
