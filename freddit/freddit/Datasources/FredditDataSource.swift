@@ -50,6 +50,10 @@ class FredditDataSource: NSObject, UITableViewDataSource {
         return items[indexPath.row]
     }
     
+    func removeItem(at indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+    }
+    
     // Mark: Table View Data Source conformance
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,8 +70,9 @@ class FredditDataSource: NSObject, UITableViewDataSource {
             print("❌ FATAL ERROR: LISTING CELL OFF WRONG TYPE AT: \(indexPath)")
             return UITableViewCell()
         }
+        let item = items[indexPath.row]
+        cell.configure(for: item, unread: !PersistenceHelper.isItemRead(item), delegate: delegate)
         
-        cell.configure(for: items[indexPath.row], unread: true, delegate: delegate)
         return cell
     }
     

@@ -71,6 +71,7 @@ struct ListingItem: Decodable {
         case created = "created_utc"
         case comments = "num_comments"
         case preview
+        case permalink
     }
     
     var author: String?
@@ -79,6 +80,7 @@ struct ListingItem: Decodable {
     var created: TimeInterval?
     var comments: Int?
     var preview: PreviewMedia?
+    var permalink: String?
 
 }
 

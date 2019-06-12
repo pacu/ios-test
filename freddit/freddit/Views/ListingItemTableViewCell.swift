@@ -39,6 +39,15 @@ class ListingItemTableViewCell: UITableViewCell {
         clearContents()
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if selected {
+            guard let item = item else { return }
+            PersistenceHelper.markAsRead(item: item)
+            toggleDot(unread: false, animated: animated)
+        }
+    }
+    
     // MARK: Internal Functions
     func configure(for item: ListingItem, unread: Bool = true, delegate: ListingItemDelegate) {
         self.item = item

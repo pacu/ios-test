@@ -60,10 +60,12 @@ class MasterViewController: UITableViewController {
                     return
                 }
                 
+                
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
+                
             }
         }
     }
@@ -102,5 +104,11 @@ class MasterViewController: UITableViewController {
 extension MasterViewController: ListingItemDelegate {
     func dismissed(cell: ListingItemTableViewCell, item: ListingItem) {
         // todo: hook this up to set up how posts are persisted read
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            print("❌ error: could not remove item")
+            return
+        }
+        dataSource.removeItem(at: indexPath)
+        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.left)
     }
 }

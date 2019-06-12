@@ -24,6 +24,7 @@
 		0D2CFD8222B05F0C006F920E /* MockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CFD8022B05B1C006F920E /* MockResponse.json */; };
 		0D2CFD8522B062F2006F920E /* FredditDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD8422B062F2006F920E /* FredditDataSource.swift */; };
 		0DB4AE3A22B18B1D002F052D /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB4AE3922B18B1D002F052D /* ImageDetailViewController.swift */; };
+		0DB4AE3D22B19B9F002F052D /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB4AE3C22B19B9F002F052D /* PersistenceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		0D2CFD8022B05B1C006F920E /* MockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockResponse.json; sourceTree = "<group>"; };
 		0D2CFD8422B062F2006F920E /* FredditDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FredditDataSource.swift; sourceTree = "<group>"; };
 		0DB4AE3922B18B1D002F052D /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		0DB4AE3C22B19B9F002F052D /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		0D2CFD4A22B047A8006F920E /* freddit */ = {
 			isa = PBXGroup;
 			children = (
+				0DB4AE3B22B19B6D002F052D /* Persistence */,
 				0D00571522B13F7000DE3143 /* Views */,
 				0D2CFD7B22B04852006F920E /* API */,
 				0D2CFD4B22B047A8006F920E /* AppDelegate.swift */,
@@ -191,6 +194,14 @@
 				0D2CFD8022B05B1C006F920E /* MockResponse.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0DB4AE3B22B19B6D002F052D /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				0DB4AE3C22B19B9F002F052D /* PersistenceHelper.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +341,7 @@
 				0D2CFD8522B062F2006F920E /* FredditDataSource.swift in Sources */,
 				0D00571922B1596000DE3143 /* UIViewController+Theme.swift in Sources */,
 				0D2CFD7D22B049E1006F920E /* RedditAPIClient.swift in Sources */,
+				0DB4AE3D22B19B9F002F052D /* PersistenceHelper.swift in Sources */,
 				0D00571722B13F9300DE3143 /* ListingItemTableViewCell.swift in Sources */,
 				0D2CFD7F22B051DC006F920E /* ListingModel.swift in Sources */,
 				0D2CFD4E22B047A8006F920E /* MasterViewController.swift in Sources */,
