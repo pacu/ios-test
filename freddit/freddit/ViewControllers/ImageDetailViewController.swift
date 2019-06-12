@@ -30,6 +30,7 @@ class ImageDetailViewController: UIViewController {
     }
     
     @objc func donePressed(_ sender: Any) {
+        imageView.cancelTask()
         self.dismiss(animated: true, completion: nil)
     }
     
