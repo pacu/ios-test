@@ -43,6 +43,29 @@ class fredditTests: XCTestCase {
         
     }
 
+    func testRealAPI() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let expect = expectation(description: "exp")
+        let client = RedditAPIClient()
+        client.top(limit: 50, count: 50, page: nil) { (listing, error) in
+            
+            expect.fulfill()
+            XCTAssertNil(error)
+            
+            
+            guard let listing = listing, let listingItems = ListingVisitor.listingItems(from: listing, of: "t3")  else {
+                XCTFail("listing unavailable")
+                return
+            }
+            
+            
+            XCTAssertEqual(listingItems.count, 50)
+        }
+        
+        wait(for: [expect], timeout: 6)
+        
+    }
 //    func testPerformanceExample() {
 //        // This is an example of a performance test case.
 //        self.measure {

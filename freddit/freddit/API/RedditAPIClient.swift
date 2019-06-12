@@ -12,29 +12,86 @@ typealias APIClientResponseBlock = (_ result: Listing?, _ error: Error?) -> Void
 
 protocol APIClient {
     
-    func top(limit: Int, count: Int, page: String?, resultBlock: @escaping APIClientResponseBlock)
+    func top(limit: Int, count: Int, page: Int?, resultBlock: @escaping APIClientResponseBlock)
 }
 
+enum APIError: Error {
+    case invalidLimit
+    case malformedURL
+}
 
-public enum ResponseError: Error {
+enum ResponseError: Error {
     case invalidResponse
 }
 
 class RedditAPIClient: APIClient {
-    func top(limit: Int, count: Int, page: String?, resultBlock: @escaping APIClientResponseBlock) {
+    
+    private let session = URLSession.shared
+    private let basePath = "https://api.reddit.com/top"
+    private var before: String?
+    private var after: String?
+    
+    enum QueryParams: String {
+        case limit
+        case count
+        case before
+        case after
         
+        func queryItem(value: String?) -> URLQueryItem {
+            return URLQueryItem(name: self.rawValue, value: value)
+        }
     }
     
-    
-    let basePath = "https://api.reddit.com/top"
-    
+    func top(limit: Int, count: Int, page: Int?, resultBlock: @escaping APIClientResponseBlock) {
+        guard limit > 0 else {
+            resultBlock(nil, APIError.invalidLimit)
+            return
+        }
+        guard var urlComponents = URLComponents(string: basePath) else {
+            resultBlock(nil, APIError.malformedURL )
+            return
+        }
+        
+        var queryItems: [URLQueryItem] =  [
+            QueryParams.limit.queryItem(value:"\(limit)"),
+            QueryParams.count.queryItem(value: "\(count)"),
+        ]
+        
+        if let page = page {
+            let currentPage = count/limit
+            
+            if currentPage > page, let after = after {
+                // Todo: fetch next page
+            } else if currentPage < page, let before = before {
+                // TODO: fetch previous
+            }
+        }
+        
+        // first Page
+        
+        guard let url = urlComponents.url else {
+            resultBlock(nil, APIError.malformedURL)
+            return
+        }
+        
+        session.dataTask(with: url) { data, response, error in
+            if let data = data {
+                do {
+                    let res = try JSONDecoder().decode(Listing.self, from: data)
+                    resultBlock(res,nil)
+                } catch {
+                    resultBlock(nil, error)
+                }
+            }
+            }.resume()
+    }
 }
 
 
 class MockClient: APIClient {
     
     private let waitTime: TimeInterval = 5
-    func top(limit: Int, count: Int, page: String?, resultBlock: @escaping APIClientResponseBlock) {
+    func top(limit: Int, count: Int, page: Int?, resultBlock: @escaping APIClientResponseBlock) {
         DispatchQueue.global().async { [weak self] in
             guard let `self` = self else {
                 DispatchQueue.main.async {
