@@ -15,7 +15,7 @@ protocol ListingItemDelegate: class {
 
 class ListingItemTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var thumbnail: WebImageView!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -46,6 +46,10 @@ class ListingItemTableViewCell: UITableViewCell {
         toggleDot(unread: unread)
         
         //todo: thumbnail
+        
+        if let imagePath = item.thumbnail, let imageURL = URL(string: imagePath) {
+            self.thumbnail.setImage(from: imageURL)
+        }
         
         self.authorLabel.text = item.author ?? "by unknown"
         self.titleLabel.text = item.title ?? "No title"
@@ -90,6 +94,7 @@ class ListingItemTableViewCell: UITableViewCell {
         self.item = nil
         self.dateLabel.text = nil
         self.authorLabel.text = nil
+        self.thumbnail.cancelTask()
         self.thumbnail.setPlaceholderImage()
         self.commentsLabel.text = nil
         self.toggleDot(unread: true)

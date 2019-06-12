@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D00571722B13F9300DE3143 /* ListingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00571622B13F9300DE3143 /* ListingItemTableViewCell.swift */; };
 		0D00571922B1596000DE3143 /* UIViewController+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00571822B1596000DE3143 /* UIViewController+Theme.swift */; };
+		0D00571B22B17AC000DE3143 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00571A22B17AC000DE3143 /* WebImageView.swift */; };
 		0D2CFD4C22B047A8006F920E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD4B22B047A8006F920E /* AppDelegate.swift */; };
 		0D2CFD4E22B047A8006F920E /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD4D22B047A8006F920E /* MasterViewController.swift */; };
 		0D2CFD5022B047A8006F920E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD4F22B047A8006F920E /* DetailViewController.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		0D00571622B13F9300DE3143 /* ListingItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingItemTableViewCell.swift; sourceTree = "<group>"; };
 		0D00571822B1596000DE3143 /* UIViewController+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Theme.swift"; sourceTree = "<group>"; };
+		0D00571A22B17AC000DE3143 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		0D2CFD4822B047A8006F920E /* freddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2CFD4B22B047A8006F920E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D2CFD4D22B047A8006F920E /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				0D00571622B13F9300DE3143 /* ListingItemTableViewCell.swift */,
+				0D00571A22B17AC000DE3143 /* WebImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				0D00571722B13F9300DE3143 /* ListingItemTableViewCell.swift in Sources */,
 				0D2CFD7F22B051DC006F920E /* ListingModel.swift in Sources */,
 				0D2CFD4E22B047A8006F920E /* MasterViewController.swift in Sources */,
+				0D00571B22B17AC000DE3143 /* WebImageView.swift in Sources */,
 				0D2CFD4C22B047A8006F920E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
