@@ -5,6 +5,8 @@
 ⚠️ Partially or scaffolded
 ✅ Implemented
 
+
+## what's done?
 - [x] Pull to Refresh ✅
 - [ ] Pagination support ⚠️
 - [ ] Saving pictures in the picture gallery ❌
