@@ -16,11 +16,12 @@ class WebImageView: UIImageView {
         downloadTask?.cancel()
     }
     
-    func setImage(from url: URL, usePlaceholder: Bool = true) {
+    func setImage(from url: URL, usePlaceholder: Bool = true, completion: ((Bool) -> Void)? = nil) {
         downloadTask?.cancel()
         
         if let image = ImageCache.cachedImage(from: url) {
             self.image = image
+            completion?(true)
             return
         }
         
@@ -30,17 +31,21 @@ class WebImageView: UIImageView {
             guard let `self` = self else { return }  // do nothing
             if let e = error {
                 print("❌ Error downloading from \(url), error: \(e)")
+                completion?(false)
                 return
             }
             
             if let data = data, let image = UIImage(data: data) {
                 DispatchQueue.main.async {
                     self.image = image
+                    completion?(true)
                 }
                 //save in cache
                 DispatchQueue.global().async {
                     ImageCache.cache(image: image, url: url)
                 }
+            } else {
+                completion?(false)
             }
             
         })
