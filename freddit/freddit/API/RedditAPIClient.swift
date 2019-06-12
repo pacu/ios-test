@@ -36,7 +36,7 @@ class RedditAPIClient: APIClient {
         case count
         case before
         case after
-        
+        case rawJSON = "raw_json"
         func queryItem(value: String?) -> URLQueryItem {
             return URLQueryItem(name: self.rawValue, value: value)
         }
@@ -55,6 +55,7 @@ class RedditAPIClient: APIClient {
         let queryItems: [URLQueryItem] = [
             QueryParams.limit.queryItem(value:"\(limit)"),
             QueryParams.count.queryItem(value: "\(count)"),
+            QueryParams.rawJSON.queryItem(value: "1")
         ]
         
         if let page = page {
