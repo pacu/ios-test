@@ -11,8 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
+  
     func configureView() {
         // Update the user interface for the detail item.
 //        if let detail = detailItem {
@@ -22,9 +21,14 @@ class DetailViewController: UIViewController {
 //        }
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setBlackBarTheme()
         configureView()
     }
 

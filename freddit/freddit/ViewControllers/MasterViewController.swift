@@ -14,11 +14,17 @@ class MasterViewController: UITableViewController {
     var objects = [Any]()
 
     var dataSource = FredditDataSource(apiClient: MockClient())
-
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        setBlackBarTheme()
+        self.title = "Reddit Posts"
       
         if let split = splitViewController {
             let controllers = split.viewControllers
