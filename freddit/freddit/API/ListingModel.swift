@@ -22,6 +22,10 @@ struct ListingVisitor {
             return listingChild.data
         }
     }
+    
+    static func image(for item: ListingItem) -> ImageItem? {
+        return item.preview?.images?.first?.source
+    }
 }
 struct Listing: Decodable {
     enum CodingKeys: CodingKey {
@@ -66,6 +70,7 @@ struct ListingItem: Decodable {
         case title
         case created = "created_utc"
         case comments = "num_comments"
+        case preview
     }
     
     var author: String?
@@ -73,5 +78,34 @@ struct ListingItem: Decodable {
     var title: String?
     var created: TimeInterval?
     var comments: Int?
+    var preview: PreviewMedia?
 
+}
+
+struct PreviewMedia: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case images
+    }
+    
+    var images: [Images]?
+}
+
+struct Images: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case source
+    }
+    
+    var source: ImageItem
+}
+
+struct ImageItem: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case url
+        case width
+        case height
+    }
+    
+    var url: String
+    var height: Int
+    var width: Int
 }

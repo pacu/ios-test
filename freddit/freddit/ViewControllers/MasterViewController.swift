@@ -13,7 +13,7 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
 
-    var dataSource = FredditDataSource(apiClient: MockClient())
+    var dataSource = FredditDataSource(apiClient: RedditAPIClient())
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -32,13 +32,15 @@ class MasterViewController: UITableViewController {
         }
         
         dataSource.fetch { [weak self] (success) in
-            
-            guard success else {
-                print("Ooops fetch failed")
-                return
+            DispatchQueue.main.async {
+                
+                guard success else {
+                    print("Ooops fetch failed")
+                    return
+                }
+                
+                self?.tableView.reloadData()
             }
-            
-            self?.tableView.reloadData()
         }
     }
 

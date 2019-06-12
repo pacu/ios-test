@@ -52,7 +52,7 @@ class RedditAPIClient: APIClient {
             return
         }
         
-        var queryItems: [URLQueryItem] =  [
+        let queryItems: [URLQueryItem] = [
             QueryParams.limit.queryItem(value:"\(limit)"),
             QueryParams.count.queryItem(value: "\(count)"),
         ]
@@ -67,6 +67,7 @@ class RedditAPIClient: APIClient {
             }
         }
         
+        urlComponents.queryItems = queryItems
         // first Page
         
         guard let url = urlComponents.url else {

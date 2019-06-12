@@ -41,7 +41,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j8e-z9-ymY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j8e-z9-ymY" customClass="WebImageView" customModule="freddit" customModuleProvider="target">
                                 <rect key="frame" x="137" y="228.5" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="5a3-R1-WWw"/>
@@ -75,6 +75,7 @@
                         <outlet property="authorLabel" destination="0XM-y9-sOw" id="aUZ-YU-mTG"/>
                         <outlet property="thumbnail" destination="j8e-z9-ymY" id="Apm-Ai-79F"/>
                         <outlet property="titleLabel" destination="5ov-Ki-f0S" id="bzb-mR-UlU"/>
+                        <segue destination="N1g-bD-Wai" kind="presentation" identifier="ShowImageDetail" id="mKW-Ac-3RG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -112,7 +113,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="376" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-img-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="65G-TI-vng">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-img-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="65G-TI-vng" customClass="WebImageView" customModule="freddit" customModuleProvider="target">
                                             <rect key="frame" x="20" y="40" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="8SV-Wb-mco"/>
@@ -219,6 +220,48 @@
             </objects>
             <point key="canvasLocation" x="708.69565217391312" y="-630.13392857142856"/>
         </scene>
+        <!--Image Detail View Controller-->
+        <scene sceneID="nxC-eP-Y5Y">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ECL-ME-OyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="YGB-o0-wwI" customClass="ImageDetailViewController" customModule="freddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mvG-QH-lTs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lls-3V-FR4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wth-JM-PkB" customClass="WebImageView" customModule="freddit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wth-JM-PkB" firstAttribute="leading" secondItem="pdP-K5-mBZ" secondAttribute="leading" id="01n-lb-EPm"/>
+                            <constraint firstItem="pdP-K5-mBZ" firstAttribute="bottom" secondItem="lls-3V-FR4" secondAttribute="bottom" id="09e-hW-ccf"/>
+                            <constraint firstItem="lls-3V-FR4" firstAttribute="trailing" secondItem="pdP-K5-mBZ" secondAttribute="trailing" id="8vg-ny-84g"/>
+                            <constraint firstItem="pdP-K5-mBZ" firstAttribute="bottom" secondItem="Wth-JM-PkB" secondAttribute="bottom" id="90e-Sk-Umf"/>
+                            <constraint firstItem="pdP-K5-mBZ" firstAttribute="bottom" secondItem="lls-3V-FR4" secondAttribute="bottom" id="Cyr-Ej-RKO"/>
+                            <constraint firstItem="lls-3V-FR4" firstAttribute="top" secondItem="pdP-K5-mBZ" secondAttribute="top" id="FVD-sR-tBo"/>
+                            <constraint firstItem="Wth-JM-PkB" firstAttribute="top" secondItem="pdP-K5-mBZ" secondAttribute="top" id="OiZ-2K-24a"/>
+                            <constraint firstItem="lls-3V-FR4" firstAttribute="top" secondItem="pdP-K5-mBZ" secondAttribute="top" id="cep-uW-cCt"/>
+                            <constraint firstItem="lls-3V-FR4" firstAttribute="leading" secondItem="pdP-K5-mBZ" secondAttribute="leading" id="deW-IX-4AV"/>
+                            <constraint firstItem="pdP-K5-mBZ" firstAttribute="trailing" secondItem="Wth-JM-PkB" secondAttribute="trailing" id="sb8-Lg-o40"/>
+                            <constraint firstItem="pdP-K5-mBZ" firstAttribute="trailing" secondItem="lls-3V-FR4" secondAttribute="trailing" id="wUw-h9-kWW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pdP-K5-mBZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gtj-wz-FDd"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="Wth-JM-PkB" id="DEy-6w-5vF"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2755" y="84"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
             <objects>
@@ -235,11 +278,27 @@
             </objects>
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cVz-12-Phk">
+            <objects>
+                <navigationController id="N1g-bD-Wai" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="elu-40-ltW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YGB-o0-wwI" kind="relationship" relationship="rootViewController" id="wCG-li-LLb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mMZ-Mw-RNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1746" y="129"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon-img-placeholder" width="375" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>

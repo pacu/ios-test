@@ -23,6 +23,7 @@
 		0D2CFD8122B05B1C006F920E /* MockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CFD8022B05B1C006F920E /* MockResponse.json */; };
 		0D2CFD8222B05F0C006F920E /* MockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CFD8022B05B1C006F920E /* MockResponse.json */; };
 		0D2CFD8522B062F2006F920E /* FredditDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CFD8422B062F2006F920E /* FredditDataSource.swift */; };
+		0DB4AE3A22B18B1D002F052D /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB4AE3922B18B1D002F052D /* ImageDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		0D2CFD7E22B051DC006F920E /* ListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
 		0D2CFD8022B05B1C006F920E /* MockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockResponse.json; sourceTree = "<group>"; };
 		0D2CFD8422B062F2006F920E /* FredditDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FredditDataSource.swift; sourceTree = "<group>"; };
+		0DB4AE3922B18B1D002F052D /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		0D00571422B13F3B00DE3143 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0DB4AE3922B18B1D002F052D /* ImageDetailViewController.swift */,
 				0D2CFD4D22B047A8006F920E /* MasterViewController.swift */,
 				0D2CFD4F22B047A8006F920E /* DetailViewController.swift */,
 				0D00571822B1596000DE3143 /* UIViewController+Theme.swift */,
@@ -332,6 +335,7 @@
 				0D2CFD4E22B047A8006F920E /* MasterViewController.swift in Sources */,
 				0D00571B22B17AC000DE3143 /* WebImageView.swift in Sources */,
 				0D2CFD4C22B047A8006F920E /* AppDelegate.swift in Sources */,
+				0DB4AE3A22B18B1D002F052D /* ImageDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
