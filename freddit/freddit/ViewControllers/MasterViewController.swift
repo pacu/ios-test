@@ -12,8 +12,9 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
-
+    
     var dataSource = FredditDataSource(apiClient: RedditAPIClient())
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -22,15 +23,32 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         setBlackBarTheme()
         self.title = "Reddit Posts"
-      
+
+        // refresh control
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor.white
+        refreshControl.attributedTitle = NSAttributedString(string: "reaching Narwhal HQ", attributes: [ NSAttributedString.Key.foregroundColor : UIColor.white ])
+        self.refreshControl = refreshControl
+        
+
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         
+        fetch()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
+        super.viewWillAppear(animated)
+    }
+
+    // MARK: - Data
+    private func fetch() {
         dataSource.fetch { [weak self] (success) in
             DispatchQueue.main.async {
                 
@@ -40,16 +58,10 @@ class MasterViewController: UITableViewController {
                 }
                 
                 self?.tableView.reloadData()
+                self?.refreshControl?.endRefreshing()
             }
         }
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
-        super.viewWillAppear(animated)
-    }
-
-
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,7 +82,7 @@ class MasterViewController: UITableViewController {
         }
     }
 
-    // MARK: - Table View
+    // MARK: - Table View Data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return dataSource.numberOfSections(in: tableView)
@@ -88,7 +100,7 @@ class MasterViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return false
     }
-
+    
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 //        if editingStyle == .delete {
 //            objects.remove(at: indexPath.row)
@@ -98,6 +110,10 @@ class MasterViewController: UITableViewController {
 //        }
 //    }
 
+    // MARK: events
+    @objc func refresh(_ sender: Any) {
+       fetch()
+    }
 
 }
 
