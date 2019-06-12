@@ -53,6 +53,15 @@ class FredditDataSource: NSObject, UITableViewDataSource {
     func removeItem(at indexPath: IndexPath) {
         items.remove(at: indexPath.row)
     }
+    func removeAllItems(from tableView: UITableView) {
+        
+        tableView.beginUpdates()
+        for i in 0 ..< items.count {
+            items.removeFirst()
+            tableView.deleteRows(at: [IndexPath(row: i, section: 0)], with: UITableView.RowAnimation.automatic)
+        }
+        tableView.endUpdates()
+    }
     
     // Mark: Table View Data Source conformance
     

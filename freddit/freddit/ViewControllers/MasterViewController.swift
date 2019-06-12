@@ -15,7 +15,6 @@ class MasterViewController: UITableViewController {
     
     var dataSource = FredditDataSource(apiClient: RedditAPIClient())
     
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -24,6 +23,7 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setBlackBarTheme()
+        setupToolbar()
         self.title = "Reddit Posts"
 
         // refresh control
@@ -72,14 +72,33 @@ class MasterViewController: UITableViewController {
                     return
                 }
                 
-                
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
-                
             }
         }
+    }
+    
+    // MARK: UI
+    
+    
+    private func setupToolbar() {
+        
+        guard let nav = self.navigationController else { return }
+        nav.isToolbarHidden = false
+        nav.toolbar.barStyle = UIBarStyle.blackTranslucent
+        nav.toolbar.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        let dismissAll = UIBarButtonItem(title: "Dismiss All", style: UIBarButtonItem.Style.done, target: self, action: #selector(dismissAll(_:)))
+        
+        dismissAll.tintColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+        
+        let items = [
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            dismissAll,
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+        ]
+        self.setToolbarItems(items, animated: false)
     }
 
     // MARK: - Table View Data source
@@ -114,6 +133,11 @@ class MasterViewController: UITableViewController {
     @objc func refresh(_ sender: Any) {
        fetch()
     }
+    
+    @objc func dismissAll(_ sender: Any?) {
+       dataSource.removeAllItems(from: tableView)
+    }
+    
 
 }
 
